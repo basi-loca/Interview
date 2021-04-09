@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <select name="select">
+        <option value="" selected="selected">
+            選択してください </option>
+        <option value="1">
+            制作のご相談 </option>
+        <option value="2">
+            採用について </option>
+        <option value="3">
+            取材依頼について </option>
+        <option value="4">
+            その他 </option>
+    </select>
+
+    <script>
+        var unSelected = "#999";
+        var selected = "#aaa";
+        $(function () {
+            $("select").css("color", unSelected);
+            $("option").css("color", selected);
+            $("select").change(function () {
+                var selItem = $(this).val();
+                if (selItem == $(this).find('option:first').val()) {
+                    $(this).css("color", unSelected);
+                } else {
+                    $(this).css("color", selected);
+                }
+            });
+        })
+    </script>
+
+</body>
+
+</html>
